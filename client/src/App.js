@@ -1,11 +1,15 @@
-import React from "react";
-import "./App.css";
+import React, { Fragment } from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import Header from "./containers/Header/Header";
 
 function App() {
 	return (
-		<div className="App">
-			<h1>Welcome to Connor Musick's Website</h1>
-		</div>
+		<BrowserRouter>
+			<Fragment>
+				<Header />
+			</Fragment>
+		</BrowserRouter>
 	);
 }
 
