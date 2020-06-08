@@ -58,7 +58,7 @@ class HomePage extends Component {
                   showSocialMedia: true,
                 });
               }}>
-              Social Media / Links
+              Contact Info / Social Media
             </button>
           </nav>
         </div>
