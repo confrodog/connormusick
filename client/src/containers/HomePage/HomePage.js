@@ -1,18 +1,74 @@
-import React, { Component } from "react";
-import "./HomePage.css";
-
-import HomePageContent from "../../components/HomePageContent/HomePageContent";
-import HomePageSideBar from "../../components/HomePageSideBar/HomePageSideBar";
+import React, { Component } from 'react';
+import './HomePage.css';
 
 class HomePage extends Component {
-	render() {
-		return (
-			<div className="Home-Page">
-				<HomePageSideBar />
-				<HomePageContent />
-			</div>
-		);
-	}
+  state = {
+    showAbout: true,
+    showSocialMedia: false,
+  };
+
+  // JSX for About Page
+  About = () => (
+    <div className='Home-Page-Content-Card'>
+      <h2>About Connor Musick</h2>
+      <div className='About-Intro'>
+        <p>
+          Hello weary traveller! You have stumbled upon my domain! Please allow
+          me to introduce myself...
+        </p>{' '}
+        <p>
+          My name is Connor Musick and I am 22 years old, graduated from the
+          University of Arizona with a Bachelor's of Science in Electrical and
+          Computer Engineering and will be working for an engineering company in
+          the coming fall. While the degree has proven its worth by how
+          challenging the work was, I find that my love for programming grew 10x
+          what my love for computer engineering did. Because of this love, I
+          have bought many (unfinished) software development courses on Udemy
+          and this website is a testament to how I will improve my SWE skills
+          enough to be hired for it!
+        </p>
+      </div>
+    </div>
+  );
+
+  // JSX for Social Media Page
+  SocialMedia = () => <div className='Social-Media-Icons-Div'> </div>;
+
+  render() {
+    return (
+      <div className='Home-Page'>
+        <div className='Home-Page-Sidebar'>
+          <nav class='nav flex-column'>
+            <button
+              className='nav-link active'
+              onClick={() => {
+                this.setState({
+                  showAbout: true,
+                  showSocialMedia: false,
+                });
+              }}>
+              About
+            </button>
+
+            <button
+              className='nav-link'
+              onClick={() => {
+                this.setState({
+                  showAbout: false,
+                  showSocialMedia: true,
+                });
+              }}>
+              Social Media / Links
+            </button>
+          </nav>
+        </div>
+        <div className='Home-Page-Content'>
+          {this.state.showAbout ? <this.About /> : null}
+          {this.state.showSocialMedia ? <this.SocialMedia /> : null}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default HomePage;
