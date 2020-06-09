@@ -14,7 +14,7 @@ class ProjectsPage extends Component {
             React/Node.
           </p>
           <div className='Project-Card-Container'>
-            <ProjectCard name='Exercise App' />
+            <ProjectCard name='Exercisr' link='http://localhost:3002' />
           </div>
         </div>
       </div>
