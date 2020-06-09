@@ -20,7 +20,7 @@
   width: 75%;
   height: 100%;
 }
-.Home-Page-Content-Card {
+.Content-Card {
   background-color: #6c809a;
   border-style: solid;
   border-radius: 5px;
@@ -31,6 +31,14 @@
 .About-Intro {
   width: 75%;
 }
+.Contact-Info {
+  display: inline;
+  font-size: 16pt;
+  margin-right: 10px;
+}
+.Title {
+  margin-bottom: 10px;
+}
 .Social-Media-Icons-Div {
   display: flex;
   flex-direction: row;
@@ -39,11 +47,22 @@
   height: 5%;
   width: 5%;
 }
+.White {
+  color: white;
+}
+.Left-Border {
+  border-left-style: solid;
+  border-left-width: 3px;
+  border-left-color: white;
+  padding-left: 10px;
+}
 
 p,
 h1,
 h2 {
   color: white;
+  margin: 0;
+  padding: 0;
 }
 button {
   margin-left: 10px;

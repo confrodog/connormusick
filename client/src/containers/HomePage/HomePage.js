@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+
 import './HomePage.css';
+import githublogo from '../../assets/github2.png';
+import linkedin from '../../assets/linkedin.png';
+import SocialMediaCard from '../../components/SocialMediaCard/SocialMediaCard';
 
 class HomePage extends Component {
   state = {
@@ -9,8 +13,8 @@ class HomePage extends Component {
 
   // JSX for About Page
   About = () => (
-    <div className='Home-Page-Content-Card'>
-      <h2>About Connor Musick</h2>
+    <div className='Content-Card'>
+      <h2 className='Title'>About Connor Musick</h2>
       <div className='About-Intro'>
         <p>
           Hello weary traveller! You have stumbled upon my domain! Please allow
@@ -32,7 +36,26 @@ class HomePage extends Component {
   );
 
   // JSX for Social Media Page
-  SocialMedia = () => <div className='Social-Media-Icons-Div'> </div>;
+  SocialMedia = () => (
+    <div className='Social-Media-Div'>
+      {' '}
+      <div className='Content-Card'>
+        <h2 className='Title White'>Contact Info:</h2>
+        <p className='Contact-Info'>Phone Number: (602) 579-6236</p>
+        <p className='Contact-Info Left-Border'>Email: cjmusick48@gmail.com</p>
+      </div>
+      <div className='Social-Media-Icons-Div'>
+        <SocialMediaCard
+          image={githublogo}
+          link='https://github.com/confrodog'
+        />
+        <SocialMediaCard
+          image={linkedin}
+          link='https://www.linkedin.com/in/connor-musick/'
+        />
+      </div>
+    </div>
+  );
 
   render() {
     return (
