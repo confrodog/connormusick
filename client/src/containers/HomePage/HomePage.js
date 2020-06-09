@@ -4,11 +4,13 @@ import './HomePage.css';
 import githublogo from '../../assets/github2.png';
 import linkedin from '../../assets/linkedin.png';
 import SocialMediaCard from '../../components/SocialMediaCard/SocialMediaCard';
+import PDFViewer from '../../components/PDFViewer/PDFViewer';
 
 class HomePage extends Component {
   state = {
     showAbout: true,
     showSocialMedia: false,
+    showResume: false,
   };
 
   // JSX for About Page
@@ -57,6 +59,15 @@ class HomePage extends Component {
     </div>
   );
 
+  // JSX for Resume
+  Resume = () => (
+    <div className='Resume-Div'>
+      <h2>My Resume</h2>
+      <PDFViewer />
+      <p>Last Updated: June 9th, 2020</p>
+    </div>
+  );
+
   render() {
     return (
       <div className='Home-Page'>
@@ -68,17 +79,29 @@ class HomePage extends Component {
                 this.setState({
                   showAbout: true,
                   showSocialMedia: false,
+                  showResume: false,
                 });
               }}>
               About
             </button>
-
+            <button
+              className='nav-link'
+              onClick={() => {
+                this.setState({
+                  showAbout: false,
+                  showSocialMedia: false,
+                  showResume: true,
+                });
+              }}>
+              Resume
+            </button>
             <button
               className='nav-link'
               onClick={() => {
                 this.setState({
                   showAbout: false,
                   showSocialMedia: true,
+                  showResume: false,
                 });
               }}>
               Contact Info / Social Media
@@ -88,6 +111,7 @@ class HomePage extends Component {
         <div className='Home-Page-Content'>
           {this.state.showAbout ? <this.About /> : null}
           {this.state.showSocialMedia ? <this.SocialMedia /> : null}
+          {this.state.showResume ? <this.Resume /> : null}
         </div>
       </div>
     );
