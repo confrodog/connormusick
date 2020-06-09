@@ -1,11 +1,12 @@
 import React from 'react';
 
+import './ProjectCard.css';
+
 class ProjectCard extends Component {
-  state = {};
   render() {
     return (
       <div>
-        <h1>Project Card</h1>
+        <h1>{this.props.name}</h1>
       </div>
     );
   }

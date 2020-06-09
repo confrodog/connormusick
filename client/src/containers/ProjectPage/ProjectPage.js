@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './ProjectPage.css';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 class ProjectsPage extends Component {
   render() {
@@ -12,6 +13,9 @@ class ProjectsPage extends Component {
             This is where my various creations live as I learn more about
             React/Node.
           </p>
+          <div className='Project-Card-Container'>
+            <ProjectCard name='Exercise App' />
+          </div>
         </div>
       </div>
     );
